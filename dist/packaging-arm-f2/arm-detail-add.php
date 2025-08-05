@@ -350,10 +350,18 @@ function angka(e) {
 <div class="modal fade" id="add" role="dialog">
 	   <div class="modal-dialog modal-lg">
 		   <div class="modal-content">
-			   <div class="modal-header">
-				   <button type="button" class="close" data-dismiss="modal">&times;</button>
-				   <h4 class="modal-title"><b>Add addition/changes resource master <?php echo @$_GET['id']; ?></b></h4>
-			   </div>
+			<div class="modal-header d-flex justify-content-center align-items-center" style="position: relative; padding: 20px 25px;">
+                <!-- Tombol Close di kanan atas
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                    style="position: absolute; right: 20px; top: 20px; font-size: 24px; border: none; background: none;">
+                    &times;
+                </button> -->
+
+                <!-- Judul Modal -->
+                <h4 class="modal-title text-center m-0">
+                    Add addition/changes resource master <b><?php echo @$_GET['id']; ?></b> 
+                </h4>
+            </div>
 			   <div class="modal-body">
 				   <div class="modal-data"></div>
 				   <Label>Informasi :
