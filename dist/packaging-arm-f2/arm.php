@@ -122,7 +122,7 @@
 					<span class="fa fa-paste" title="Revise ARM"></span></a></button>	
 				 
 				<?php } if ($row['Status_add_resource']=="Draft" ){ ?>
-				 <a href="../config/delete-exe.php?pg=del-arm&id=<?php echo $row['Request_No'];?>">
+				 <a href="../config/delete-exe.php?pg=del-arm-f2&id=<?php echo $row['Request_No'];?>">
 				 <button style="padding:2px 4px 2px 2px;margin:1px 1px 1px 1px;" class="btn btn-danger glyphicon glyphicon-trash"  onClick="return checkDelete();" <?php echo $disabled; ?> >
 				</button></a>
 				<?php }?>

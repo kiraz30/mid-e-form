@@ -87,6 +87,68 @@
         <td></td>
     </tr>
 	<tr>
+		<td><span class="form-group">Model Code</span></td>
+        <td colspan="2">
+			<div class="form-group d-flex align-items-center justify-content-between mt-0 mb-1"> 
+				<input class="form-control py-4"  
+				name="inputModelCode" id="inputModelCode" maxlength="150" type="text" placeholder="Input Model Code"   
+				value="<?php echo @$tampildata['Model_Code']; ?>" readonly="readonly" />
+				&nbsp;<button type="button" style="padding:2px 4px 4px 4px" class="btn btn-primary" title="Search Search Model"  
+				name="btnsearch"
+				onClick="popupwindow('packaging-arm-f2/process-popup.php?id=armf2','Search Material','600','900');"
+				 <?php echo $disabled; ?>>
+				<span class="glyphicon glyphicon-search" ></span></button>
+
+				&nbsp;<button type="button" style="padding:2px 4px 4px 4px" class="btn btn-primary" title="Search Search Model"  
+				name="btnsearch" onClick="return get_Clear_Model();"
+				 <?php echo $disabled; ?>> Clear</button>
+			</div>  
+		</td>	
+        <td></td>
+    </tr>
+    <tr>
+		<td><span class="form-group">Model Name</span></td>
+        <td colspan="3" >
+			<span class="form-group">
+				<input class="form-control py-4"  name="inputModelName" id="inputModelName" 
+				maxlength="150" type="text" placeholder="Input Model Name" 
+				value="<?php  echo @$tampildata['Model_Name']; ?>" readonly="readonly" />
+			</span>  
+		</td>	
+        <td></td>
+    </tr>
+		<tr>
+		<td><span class="form-group">Process Code</span></td>
+        <td colspan="2">
+			<div class="form-group d-flex align-items-center justify-content-between mt-0 mb-1"> 
+				<input class="form-control py-4"  
+				name="inputProcessCode" id="inputProcessCode" maxlength="150" type="text" placeholder="Input Process Code"   
+				value="<?php echo @$tampildata['ProcessCode']; ?>" readonly="readonly" />
+				&nbsp;<button type="button" style="padding:2px 4px 4px 4px" class="btn btn-primary" title="Search Search Process"  
+				name="btnsearch"
+				onClick="popupwindow('packaging-arm-f2/process-popup.php?id=armf2','Search Material','600','900');"
+				 <?php echo $disabled; ?>>
+				<span class="glyphicon glyphicon-search" ></span></button>
+
+				&nbsp;<button type="button" style="padding:2px 4px 4px 4px" class="btn btn-primary" title="Search Search Process"  
+				name="btnsearch" onClick="return get_Clear_Process();"
+				 <?php echo $disabled; ?>> Clear</button>
+			</div>  
+		</td>	
+        <td></td>
+    </tr>
+    <tr>
+		<td><span class="form-group">Process Name</span></td>
+        <td colspan="3" >
+			<span class="form-group">
+				<input class="form-control py-4"  name="inputProcessName" id="inputProcessName" 
+				maxlength="150" type="text" placeholder="Input Process Name" 
+				value="<?php  echo @$tampildata['ProcessName']; ?>" readonly="readonly" />
+			</span>  
+		</td>	
+        <td></td>
+    </tr>
+	<tr>
         <td><span class="form-group">Material Name Request *</span></td>
         <td colspan="3"><span class="form-group">
     	    <input class="form-control py-4"  name="inputMaterialNameRequest" id="inputMaterialNameRequest" 
@@ -94,9 +156,7 @@
 		  	value="<?php  echo @$tampildata['Material_Name_Request']; ?>" <?php echo $disabled; ?> />
             </span>
 		</td>
-    </tr>
- 
-
+	</tr>
 	<tr>
         <td><span class="form-group">Remark *</span></td>
         <td colspan="3"><span class="form-group">
@@ -128,11 +188,24 @@ function get_Clear_Material(){
   $('#inputMaterialName').val("");
 }
 
+function get_Clear_Model(){
+  $('#inputModelCode').val("");
+  $('#inputModelName').val("");
+}
+function get_Clear_Process(){
+  $('#inputProcessCode').val("");
+  $('#inputProcessName').val("");
+}
+
  function get_Del_form(){
   $('#inputFinishGoodCode').val("");
   $('#inputFinishGoodName').val("");
   $('#inputMaterialCode').val("");
-  $('#inputMaterialName').val("");
+  $('#inputMaterialName').val("");	
+  $('#inputModelCode').val("");
+  $('#inputModelName').val("");
+  $('#inputProcessCode').val("");
+  $('#inputProcessName').val("");
   $('#inputMaterialNameRequest').val("");
   $('#inputRemark').val("");
  }
@@ -164,6 +237,10 @@ function get_save_form(){
   var inputFinishGoodName	= $('#inputFinishGoodName').val();
   var inputMaterialCode		= $('#inputMaterialCode').val();
   var inputMaterialName	  	= $('#inputMaterialName').val();
+  var inputModelode  		= $('#inputModelCode').val();
+  var inputModelName		= $('#inputModelName').val();
+  var inputProcessCode  	= $('#inputProcessCode').val();
+  var inputProcessName		= $('#inputProcessName').val();
   var inputMaterialNameRequest	= $('#inputMaterialNameRequest').val();
 
   var inputRemark			= $('#inputRemark').val();
@@ -177,6 +254,10 @@ function get_save_form(){
 	inputFinishGoodName : inputFinishGoodName,
 	inputMaterialCode	: inputMaterialCode,
 	inputMaterialName	: inputMaterialName,
+	inputModelCode	: inputModelCode,
+	inputModelName	: inputModelName,
+	inputProcessCode	: inputProcessCode,
+	inputProcessName	: inputProcessName,
 	inputMaterialNameRequest: inputMaterialNameRequest,
 	inputRemark			: inputRemark,   
    },
